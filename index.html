@@ -1,103 +1,120 @@
 <html>
-   <head>
-	  <meta charset="UTF-8"> 
-	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Infinity</title>
-      <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js" integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script src="js/app.js"></script>
-      <script src="js/previsao-controller.js"></script>
-	  <script src="js/service.js"></script>
-      <link href="css/estilo.css" rel="stylesheet">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-      <script>
-         jQuery(document).ready(function(e) {
-           jQuery('#mymodal').trigger('click');
-         });
-      </script>
-   </head>
-   <body ng-app="unicamp-futebol-app">
-      <div class="cabecalho">
-         <center>
-            <img src="imagens/logo.png" class="logo"/>
-         </center>
-      </div>
-      <div class="container col-xxl-8 px-4 py-5">
-         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-            <div class="col-10 col-sm-8 col-lg-6">
-               <img src="imagens/dados-esportivos.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
-            </div>
-            <div class="col-lg-6">
-               <h1 class="display-5 fw-bold lh-1 mb-3">Algoritmo preditivo voltado para o futebol</h1>
-               <p class="lead">A Infinity oferece uma gama de previsões de resultados para 140 ligas espalhadas pelo mundo, isso baseado em um algoritmo preditivo que avalia dados de partidas anteriores e apostas realizadas.</p>
-               <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                  <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Previsão de resultados</button>
-                  <button type="button" class="btn btn-outline-secondary btn-lg px-4">Resultados anteriores</button>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="b-example-divider"></div>
-      <div class="container col-xxl-8 px-4 py-5" ng-controller="PrevisaoController">
-         
-         <h1 class="display-5 fw-bold lh-1 mb-3">Previsão de resultados</h1>
-         <div class="row">
-            <select class="form-select" aria-label="Default select example" ng-model="ligaSelecionada" ng-change="mudarLiga()">
-               <option value="" selected>Selecione a liga</option>
-               <option ng-repeat="liga in ligas" value="{{liga}}">{{liga}}</option>
-            </select>
-         </div>
-		 
-		 
-		 
-			
-		 
-		 <div class="rounded-3 border row" id="form-escolhe-times">
-	
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Infinity</title>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"
+		integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="js/app.js"></script>
+	<script src="js/previsao-controller.js"></script>
+	<script src="js/service.js"></script>
+	<link href="css/estilo.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+		crossorigin="anonymous"></script>
+	<script>
+		jQuery(document).ready(function (e) {
+			jQuery('#mymodal').trigger('click');
+		});
+	</script>
+</head>
+
+<body ng-app="unicamp-futebol-app">
+	<div class="cabecalho">
+		<center>
+			<img src="imagens/logo.png" class="logo" />
+		</center>
+	</div>
+	<div class="container col-xxl-8 px-4 py-5">
+		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+			<div class="col-10 col-sm-8 col-lg-6">
+				<img src="imagens/dados-esportivos.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
+					height="500" loading="lazy">
+			</div>
+			<div class="col-lg-6">
+				<h1 class="display-5 fw-bold lh-1 mb-3">Algoritmo preditivo voltado para o futebol</h1>
+				<p class="lead">A Infinity oferece uma gama de previsões de resultados para 140 ligas espalhadas pelo
+					mundo, isso baseado em um algoritmo preditivo que avalia dados de partidas anteriores e apostas
+					realizadas.</p>
+				<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+					<button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Previsão de resultados</button>
+					<button type="button" class="btn btn-outline-secondary btn-lg px-4">Resultados anteriores</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="b-example-divider"></div>
+	<div class="container col-xxl-8 px-4 py-5" ng-controller="PrevisaoController">
+
+		<h1 class="display-5 fw-bold lh-1 mb-3">Previsão de resultados</h1>
+		<div class="row">
+			<select class="form-select" aria-label="Default select example" ng-model="ligaSelecionada"
+				ng-change="mudarLiga()">
+				<option value="" selected>Selecione a liga</option>
+				<option ng-repeat="liga in ligas" value="{{liga}}">{{liga}}</option>
+			</select>
+		</div>
+
+
+
+
+
+		<div class="rounded-3 border row" id="form-escolhe-times">
+
 			<div class="col-lg-6">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" placeholder="name@example.com" ng-model="filtro.timeCasa" ng-change="filtrar()">
+					<input type="text" class="form-control" placeholder="name@example.com" ng-model="filtro.timeCasa"
+						ng-change="filtrar()">
 					<label for="floatingInput">Time da casa</label>
 				</div>
 			</div>
-			<div class="col-lg-6">	
+			<div class="col-lg-6">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" placeholder="name@example.com" ng-model="filtro.timeVisitante" ng-change="filtrar()">
+					<input type="text" class="form-control" placeholder="name@example.com" ng-model="filtro.timeVisitante"
+						ng-change="filtrar()">
 					<label for="floatingInput">Time visitante</label>
 				</div>
 			</div>
-			<div class="col-lg-6">	
+			<div class="col-lg-6">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" placeholder="name@example.com" ng-model="filtro.competicao" ng-change="filtrar()">
+					<input type="text" class="form-control" placeholder="name@example.com" ng-model="filtro.competicao"
+						ng-change="filtrar()">
 					<label for="floatingInput">Competição</label>
 				</div>
 			</div>
-			<div class="col-lg-6">	
+			<div class="col-lg-6">
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control" placeholder="name@example.com" ng-model="filtro.pais" ng-change="filtrar()">
+					<input type="text" class="form-control" placeholder="name@example.com" ng-model="filtro.pais"
+						ng-change="filtrar()">
 					<label for="floatingInput">País</label>
 				</div>
 			</div>
-		 </div>
-		 
-         <div class="container">
-            <div class="row" >
-               <div class="col-lg-4 rounded-3 border shadow-lg titulo-card" ng-click="clicado(0)" ng-repeat="predicao in predicoes">
-                  <div class="col-lg-12 titulo-card-texto">
-                     {{predicao.competition_name}}
-                  </div>
-                  <div class="col-lg-12 local">
-                     {{predicao.competition_cluster}} - Temporada: {{predicao.season}}
-                  </div>
-                  <div class="col-lg-12 confronto">
-                     {{predicao.home_team}} X {{predicao.away_team}}
-                  </div>
-               </div>
-            </div>
-            <!--<div class="row">
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 rounded-3 border shadow-lg titulo-card" ng-click="clicado(0)"
+					ng-repeat="predicao in predicoes">
+					<div class="col-lg-12 titulo-card-texto">
+						{{predicao.competition_name}}
+					</div>
+					<div class="col-lg-12 local">
+						{{predicao.competition_cluster}} - Temporada: {{predicao.season}}
+					</div>
+					<div class="col-lg-12 confronto">
+						{{predicao.home_team}} X {{predicao.away_team}}
+					</div>
+				</div>
+			</div>
+			<!--<div class="row">
                <div class="col-lg-4 rounded-3 border shadow-lg titulo-card">
                   <div class="col-lg-12 titulo-card-texto">
                      Série B
@@ -132,87 +149,92 @@
                   </div>
                </div>
             </div>-->
-         </div>
-		 
-		 
-		 
-		 
-		 
-         <div id="myModal" class="modal" style="{{estilo}}">
-            <!-- Modal content -->
-            <div class="modal-content">
-               <h1>
-                  {{predicoes[indice].home_team}} X {{predicoes[indice].away_team}}
-               </h1>
-               <div class="container">
-                  <div class="row" >
-                     <div class="col-lg-5">
-                        <div class="col-lg-12">
-                           <table class="table">
-                              <thead>
-                                 <tr>
-                                    <th>Time</th>
-                                    <th>Força</th>
-                                 </tr>
-                              </thead>
-                              <tbody>
-                                 <tr>
-                                    <td>Palmeiras</td>
-                                    <td>Força</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Corinthians</td>
-                                    <td>Força</td>
-                                 </tr>
-                              </tbody>
-                           </table>
-                        </div>
-                        <div class="col-lg-12">
-                           <table class="table">
-                              <thead>
-                                 <tr>
-                                    <th>Aposta</th>
-                                    <th>Probabilidade</th>
-                                 </tr>
-                              </thead>
-                              <tbody>
-                                 <tr>
-                                    <td>1</td>
-                                    <td>Força</td>
-                                 </tr>
-                                 <tr>
-                                    <td>2</td>
-                                    <td>Força</td>
-                                 </tr>
-                              </tbody>
-                           </table>
-                        </div>
-                     </div>
-					 <div class="col-lg-5">
-					 <p>Welcome to the Apigee Edge Early Access Program. Some things around here might not work as you expect them to —&nbsp;that’s because we’re working around the clock to bring you a better experience.</p>
-               <p>Got feedback? Use the feedback button at the bottom
-                  of each page to tell us what you think. For help, see the <a href="#">beta documentation.</a>
-               </p>
-               
-					 </div>
-					 
-					 
-					 
-				<button id="accept" ng-click="apostar()">
-               Realizar aposta
-               </button>
-               <a class="safety" ng-click="fecharJanela()">Voltar</a>
-					 
-					 
-					 
-					 
-                  </div>
-               </div>
-               
-            </div>
-         </div>
-      </div>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-   </body>
+		</div>
+
+
+
+
+
+		<div id="myModal" class="modal" style="{{estilo}}">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<h1>
+					{{predicoes[indice].home_team}} X {{predicoes[indice].away_team}}
+				</h1>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5">
+							<div class="col-lg-12">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>Time</th>
+											<th>Força</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Palmeiras</td>
+											<td>Força</td>
+										</tr>
+										<tr>
+											<td>Corinthians</td>
+											<td>Força</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col-lg-12">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>Aposta</th>
+											<th>Probabilidade</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>Força</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>Força</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="col-lg-5">
+							<p>Welcome to the Apigee Edge Early Access Program. Some things around here might not work
+								as you expect them to —&nbsp;that’s because we’re working around the clock to bring you
+								a better experience.</p>
+							<p>Got feedback? Use the feedback button at the bottom
+								of each page to tell us what you think. For help, see the <a href="#">beta
+									documentation.</a>
+							</p>
+
+						</div>
+
+
+
+						<button id="accept" ng-click="apostar()">
+							Realizar aposta
+						</button>
+						<a class="safety" ng-click="fecharJanela()">Voltar</a>
+
+
+
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+
 </html>
