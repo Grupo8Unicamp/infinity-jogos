@@ -46,7 +46,7 @@
          <h1 class="display-5 fw-bold lh-1 mb-3">Previsão de resultados</h1>
          <div class="row">
             <select class="form-select" aria-label="Default select example" ng-model="ligaSelecionada" ng-change="mudarLiga()">
-               <option selected>Selecione a liga</option>
+               <option value="" selected>Selecione a liga</option>
                <option ng-repeat="liga in ligas" value="{{liga}}">{{liga}}</option>
             </select>
          </div>
@@ -55,7 +55,7 @@
 		 
 			
 		 
-		 <div class="rounded-3 border row">
+		 <div class="rounded-3 border row" id="form-escolhe-times">
 	
 			<div class="col-lg-6">
 				<div class="form-floating mb-3">
