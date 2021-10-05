@@ -1,11 +1,11 @@
-body{
-	margin:0px;
-	padding: 0px;
+body {
+  margin: 0px;
+  padding: 0px;
 }
 
-.logo{
-    width: 86px;
-    margin-top: 10px;
+.logo {
+  width: 86px;
+  margin-top: 10px;
 }
 
 .valores-predicao{
@@ -19,78 +19,58 @@ body{
 }
 
 .cabecalho {
-    background-color: #2684c5;
-    height: 60px;
-    margin: 0px;
-    padding: 0px;
-    position: fixed;
-    width: 100%;
+  background-color: #2684c5;
+  height: 60px;
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
 }
-
 
 .b-example-divider {
-    height: 3rem;
-    background-color: rgba(0, 0, 0, .1);
-    border: solid rgba(0, 0, 0, .15);
-    border-width: 1px 0;
-    box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%), inset 0 0.125em 0.5em rgb(0 0 0 / 15%);
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: solid rgba(0, 0, 0, 0.15);
+  border-width: 1px 0;
+  box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%),
+    inset 0 0.125em 0.5em rgb(0 0 0 / 15%);
 }
 
-.titulo-card{
-
-    padding: 0px 0px 5px !important;
-	margin-bottom: 65px !important;
+.titulo-card {
+  padding: 0px 0px 5px !important;
+  margin-bottom: 65px !important;
 }
 
-.titulo-card:hover{
-	background-color:#fafafa !important;
-	cursor:pointer;
+.titulo-card:hover {
+  background-color: #fafafa !important;
+  cursor: pointer;
 }
 
-
-.titulo-card-texto{
-	background-color: #f3f1f1;
+.titulo-card-texto {
+  background-color: #f3f1f1;
 }
-.confronto{
-	text-align:center;
-	font-size: 19px;
-    font-weight: 500;
-	margin: 20px 0px 30px;
-}
-
-.row{
-	margin-bottom: 55px;
+.confronto {
+  text-align: center;
+  font-size: 19px;
+  font-weight: 500;
+  margin: 20px 0px 30px;
 }
 
-.local{
-	font-size: 12px;
-    text-align: right;
-	padding-right: 24px;
+.row {
+  margin-bottom: 55px;
 }
 
-.visualizar-previsao{
-	font-size: 12px;
-    text-align: center;
+.local {
+  font-size: 12px;
+  text-align: right;
+  padding-right: 24px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.visualizar-previsao {
+  font-size: 12px;
+  text-align: center;
+}
 
 /* The Modal (background) */
 
@@ -113,9 +93,7 @@ body{
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
-  
 }
-
 
 /* Modal Content/Box */
 
@@ -132,15 +110,14 @@ body{
   letter-spacing: 0.5px;
   -webkit-font-smoothing: antialiased;
   /* Rectangle 2 Copy 3: */
-  background: #FFFFFF;
-  border: 1px solid #9B9C9D;
-  box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.20);
+  background: #ffffff;
+  border: 1px solid #9b9c9d;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
 }
 
 .modal-content a {
   color: #636464;
-  
 }
 
 .modal-content > h1 {
@@ -148,7 +125,6 @@ body{
   width: 100%;
   text-align: center;
 }
-
 
 button#accept {
   margin: 30px auto;
@@ -164,10 +140,13 @@ button#accept {
 }
 
 .safety {
-  color: #9B9C9D;
+  color: #9b9c9d;
   font-size: 12px;
   text-align: center;
   display: block;
   text-decoration: none;
-  cursor:pointer;
+  cursor: pointer;
+}
+#form-escolhe-times{
+  padding: 3% 2% 1%;
 }
