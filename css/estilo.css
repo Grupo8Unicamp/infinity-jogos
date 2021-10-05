@@ -8,6 +8,16 @@ body{
     margin-top: 10px;
 }
 
+.valores-predicao{
+	padding-top: 102px;
+}
+
+.filtro{
+    width: 53px;
+    height: 49px;
+    margin: 14px;
+}
+
 .cabecalho {
     background-color: #2684c5;
     height: 60px;
